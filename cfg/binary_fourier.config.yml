@@ -1,0 +1,71 @@
+#scripts are called from the codebase folder, so only one dot
+logindata_filepath: "./DATA_GYM/sanitized_login_data.csv"
+userdata_filepath: "./DATA_GYM/sanitized_customer_base.csv"
+data_output_dir: "./results/regularity/statistics/"
+
+#arguments for the binary time series, sampling/binning frequency and bounds
+freq: "12H"
+mode: "cd"
+
+periodogram:
+  window: "parzen"
+  window_size: 14
+  detrend: "constant"
+  scaling: "density"
+  mode: "none"
+
+welch:
+  window: "hann"
+  nperseg: 256
+  noverlap: null
+  nfft: 512
+  detrend: "constant"
+  scaling: "density"
+  mode: "none"
+
+experiments:
+  ex_1:
+    stat: "apen"
+    params:
+      m: 2
+      r: 0.2
+      detrend: False
+      sigma_units: True
+
+  # ex_2:
+  #   stat: "apen"
+  #   params:
+  #     m: 3
+  #     r: 0.2
+  #     detrend: False
+  #     sigma_units: True
+          
+  ex_3:
+    stat: "sampen"
+    params:
+      m: 2
+      r: 0.2
+      detrend: False
+      sigma_units: True
+
+  # ex_4:
+  #   stat: "sampen"
+  #   params:
+  #     m: 3
+  #     r: 0.2
+  #     detrend: True
+  #     sigma_units: True
+
+  ex_5:
+    stat: "permen"
+    params:
+      n: 5
+      lag: 1
+      normalize: True
+
+  # ex_6:
+  #   stat: "permen"
+  #   params:
+  #     n: 7
+  #     lag: 1
+  #     normalize: True

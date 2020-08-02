@@ -1,0 +1,31 @@
+#scripts are called from the codebase folder, so only one dot
+logindata_filepath: "./DATA_GYM/sanitized_login_data.csv"
+userdata_filepath: "./DATA_GYM/sanitized_customer_base.csv"
+data_output_dir: "./results/regularity/statistics/"
+
+freq: "1H"
+mode: "cd"
+
+max_scale: 30
+mse_freq: "D"
+
+apen:
+  m: 3
+  r: 0.2
+  detrend: True
+  sigma_units: True
+
+sampen:
+  m: 3
+  r: 0.2
+  detrend: True
+  sigma_units: True
+
+permen:
+  n: 7
+  lag: 1
+  normalize: True
+
+fse:
+  cutoff: null
+  normalize: True

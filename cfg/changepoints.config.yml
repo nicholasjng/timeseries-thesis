@@ -1,0 +1,15 @@
+#scripts are called from the codebase folder, so only one dot
+logindata_filepath: "./DATA_GYM/sanitized_login_data.csv"
+userdata_filepath: "./DATA_GYM/sanitized_customer_base.csv"
+data_output_dir: "./results/cp_detection/statistics/"
+
+freq: "1D"
+mode: "cd"
+
+penalties: ["aic", "bic", "hqc"]
+
+model_config:
+  model: "l2"
+  jump: 2
+  min_size: 5
+  

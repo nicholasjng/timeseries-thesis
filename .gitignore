@@ -1,0 +1,11 @@
+.vscode/
+.ipynb_checkpoints
+DATA_GYM
+*__pycache__*
+*.pyc
+*.DS_Store
+*.so
+
+plots/**
+!plots/*.py
+results/

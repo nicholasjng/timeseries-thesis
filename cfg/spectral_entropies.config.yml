@@ -1,0 +1,125 @@
+#scripts are called from the codebase folder, so only one dot
+logindata_filepath: "./DATA_GYM/sanitized_login_data.csv"
+userdata_filepath: "./DATA_GYM/sanitized_customer_base.csv"
+data_output_dir: "./results/regularity/statistics/"
+
+normalize: True
+
+#arguments for constructing the visit timeseries: sampling/binning frequency, counting mode
+freq: "12H"
+mode: "cd"
+
+experiments:
+  bin:
+    ex_1:
+      stat: "pse"
+      params:
+        cutoff: 1.0
+        normalize: True
+
+        p_config:
+          fs: 2.0
+          window: "hann"
+          window_size: 28
+          detrend: "constant"
+          scaling: "density"
+          mode: "none"
+
+    ex_4:
+      stat: "wse"
+      params:
+        cutoff: 1.0
+        normalize: True
+
+        p_config:
+          fs: 2.0
+          window: "hann"
+          nperseg: 256
+          noverlap: null 
+          nfft: 512
+          detrend: "constant"
+          scaling: "density"
+          mode: "none"
+    
+  td:
+    ex_2:
+      stat: "pse"
+      params:
+        cutoff: null
+        normalize: True
+
+        p_config:
+          fs: 1.0
+          window: "hann"
+          window_size: 7
+          detrend: "constant"
+          scaling: "density"
+          mode: "none"
+
+    ex_5:
+      stat: "wse"
+      params:
+        cutoff: null
+        normalize: True
+
+        p_config:
+          fs: 1.0
+          window: "hann"
+          nperseg: 32
+          noverlap: null 
+          nfft: 64
+          detrend: "constant"
+          scaling: "density"
+          mode: "none"
+
+      # ex_3:
+      #   stat: "wse"
+      #   params:
+      #     cutoff: 1.0
+      #     normalize: True
+
+      #     p_config:
+      #       fs: 24.0
+      #       window: !!python/tuple ["chebwin", 60]
+      #       window_size: 28
+      #       detrend: "constant"
+      #       scaling: "density"
+      #       mode: "none"
+
+
+
+  # ex_6:
+  #   stat: "wse"
+  #   params:
+  #     cutoff: 1.0
+  #     normalize: True
+
+  #     p_config:
+  #       fs: 24.0
+  #       window: !!python/tuple ["chebwin", 60]
+  #       nperseg: 256
+  #       noverlap: null 
+  #       nfft: 512
+  #       detrend: "constant"
+  #       scaling: "density"
+  #       mode: "none"
+
+  # ex_5:
+  #   stat: "lse"
+  #   params:
+  #     cutoff: 1.0
+  #     normalize: True
+
+  #     p_config:
+  #       normalize: True
+  #       mode: "radians"
+
+  # ex_6:
+  #   stat: "lse"
+  #   params:
+  #     cutoff: 1.0
+  #     normalize: True
+
+  #     p_config:
+  #       normalize: True
+  #       mode: "radians"

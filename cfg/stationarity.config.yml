@@ -1,0 +1,7 @@
+#scripts are called from the codebase folder, so only one dot
+logindata_filepath: "./DATA_GYM/sanitized_login_data.csv"
+userdata_filepath: "./DATA_GYM/sanitized_customer_base.csv"
+data_output_dir: "./results/regularity/statistics/"
+
+freq: "12H"
+mode: "cd"
