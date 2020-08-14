@@ -61,7 +61,7 @@ Running a script takes one line. From the root of the repository, run
 ```
 python -m bin.<script_name>
 ```
-*Notice that the file is run as a module, so no .py should be added at the end.
+*Notice that the file is run as a module, so no .py should be added at the end*.
 For example, for running the `changepoint_detection` script file inside bin, 
 you should type
 
