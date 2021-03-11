@@ -1,11 +1,15 @@
 .vscode/
 .ipynb_checkpoints
+.idea
 DATA_GYM
 *__pycache__*
 *.pyc
 *.DS_Store
 *.so
+*.c
 
 plots/**
 !plots/*.py
 results/
+venv
+regularity_analysis/build
